@@ -14,9 +14,18 @@ import 'package:flutter/services.dart';
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  $AssetsSvgIconsGen get icons => const $AssetsSvgIconsGen();
   $AssetsSvgOnlineShoppingGen get onlineShopping =>
       const $AssetsSvgOnlineShoppingGen();
   $AssetsSvgTravelGen get travel => const $AssetsSvgTravelGen();
+}
+
+class $AssetsSvgIconsGen {
+  const $AssetsSvgIconsGen();
+
+  /// File path: assets/svg/icons/trippleArrow.svg
+  SvgGenImage get trippleArrow =>
+      const SvgGenImage('assets/svg/icons/trippleArrow.svg');
 }
 
 class $AssetsSvgOnlineShoppingGen {

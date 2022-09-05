@@ -63,12 +63,12 @@ extension CommonWidgetUses on Widget {
 
 extension CommonDoubleUseCase on double {
   // percentage Value(val) of the source(this)
-  double percent(double val) => (100 * val) / this;
+  double percent(double val) => (this * val) / 100;
 }
 
 extension CommonNumUseCase on num {
   // percentage Value(val) of the source(this)
-  double percent(double val) => (100 * val) / this;
+  double percent(double val) => (this * val) / 100;
 
   // spacer
   Widget get hSpacer => SizedBox(
