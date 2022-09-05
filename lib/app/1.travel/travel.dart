@@ -4,13 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../extensions/extensions.dart';
-
-class OnBaordingPage {
-  final String title;
-  final String description;
-  final String image;
-  OnBaordingPage({required this.title, required this.description, required this.image});
-}
+import '../on_boarding_page.dart';
 
 class TravelingOnBoarding extends StatefulWidget {
   const TravelingOnBoarding({super.key});
@@ -41,6 +35,8 @@ class _TravelingOnBoardingState extends State<TravelingOnBoarding> {
     ),
   ];
 
+  bool get isLastPage => _currentPage == _pages.length - 1;
+
   @override
   void initState() {
     super.initState();
@@ -58,7 +54,7 @@ class _TravelingOnBoardingState extends State<TravelingOnBoarding> {
       data: Theme.of(context).copyWith(
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
-            minimumSize: const Size.fromHeight(50),
+            minimumSize: const Size.fromHeight(60),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
@@ -68,7 +64,7 @@ class _TravelingOnBoardingState extends State<TravelingOnBoarding> {
           style: TextButton.styleFrom(
             backgroundColor: Colors.black,
             foregroundColor: Colors.white,
-            minimumSize: const Size.fromHeight(50),
+            minimumSize: const Size.fromHeight(60),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
@@ -80,19 +76,25 @@ class _TravelingOnBoardingState extends State<TravelingOnBoarding> {
           child: Column(
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
                 children: [
-                  Text(
-                    '0${_currentPage + 1}',
-                    style: GoogleFonts.poppins(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
+                  AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 200),
+                    child: Text(
+                      '0${_currentPage + 1}',
+                      key: Key('0${_currentPage + 1}'),
+                      style: GoogleFonts.poppins(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                   Text(
-                    ' /0${_pages.length}',
+                    '/0${_pages.length}',
                     style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      // fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
                     ),
                   )
                 ],
@@ -119,8 +121,8 @@ class _TravelingOnBoardingState extends State<TravelingOnBoarding> {
                             Text(
                               _pages[index].description,
                               style: GoogleFonts.poppins(
-                                fontSize: 12,
-                                // fontWeight: FontWeight.w600,
+                                fontSize: 14,
+                                color: Colors.grey.shade500,
                               ),
                             ),
                             if (_pages[index].image.isSvg)
@@ -156,27 +158,7 @@ class _TravelingOnBoardingState extends State<TravelingOnBoarding> {
                 ),
               ),
               20.vSpacer,
-              Row(
-                children: [
-                  OutlinedButton(
-                    onPressed: () {},
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: Colors.grey.shade500,
-                    ),
-                    child: Text(
-                      'Skip',
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ).expanded(),
-                  20.hSpacer,
-                  TextButton(
-                    onPressed: goToNextPage,
-                    child: const Text('Next'),
-                  ).expanded(),
-                ],
-              ),
+              AnimatedSwitcher(duration: const Duration(milliseconds: 300), child: _buildButton()),
             ],
           ).marginAll(20),
         ),
@@ -190,5 +172,42 @@ class _TravelingOnBoardingState extends State<TravelingOnBoarding> {
 
   jumpToPage(int index) {
     _controller.animateToPage(index, duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
+  }
+
+  _buildButton() {
+    if (isLastPage) {
+      return TextButton(
+        onPressed: () {},
+        child: Text(
+          'Get Started',
+          style: GoogleFonts.poppins(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      );
+    } else {
+      return Row(
+        children: [
+          OutlinedButton(
+            onPressed: () {},
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.grey.shade500,
+            ),
+            child: Text(
+              'Skip',
+              style: GoogleFonts.poppins(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ).expanded(),
+          20.hSpacer,
+          TextButton(
+            onPressed: goToNextPage,
+            child: const Text('Next'),
+          ).expanded(),
+        ],
+      );
+    }
   }
 }
