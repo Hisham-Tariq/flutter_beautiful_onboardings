@@ -11,17 +11,74 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
+}
+
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  $AssetsSvgBitcoinGen get bitcoin => const $AssetsSvgBitcoinGen();
+  $AssetsSvgFoodDeliveryGen get foodDelivery =>
+      const $AssetsSvgFoodDeliveryGen();
   $AssetsSvgIconsGen get icons => const $AssetsSvgIconsGen();
   $AssetsSvgOnlineShoppingGen get onlineShopping =>
       const $AssetsSvgOnlineShoppingGen();
+  $AssetsSvgTaskManagementGen get taskManagement =>
+      const $AssetsSvgTaskManagementGen();
   $AssetsSvgTravelGen get travel => const $AssetsSvgTravelGen();
+}
+
+class $AssetsImagesIconsGen {
+  const $AssetsImagesIconsGen();
+
+  /// File path: assets/images/icons/github.png
+  AssetGenImage get github =>
+      const AssetGenImage('assets/images/icons/github.png');
+}
+
+class $AssetsSvgBitcoinGen {
+  const $AssetsSvgBitcoinGen();
+
+  /// File path: assets/svg/bitcoin/alwaysInPocket.svg
+  SvgGenImage get alwaysInPocket =>
+      const SvgGenImage('assets/svg/bitcoin/alwaysInPocket.svg');
+
+  /// File path: assets/svg/bitcoin/highlyBlockchained.svg
+  SvgGenImage get highlyBlockchained =>
+      const SvgGenImage('assets/svg/bitcoin/highlyBlockchained.svg');
+
+  /// File path: assets/svg/bitcoin/manageAnyWhere.svg
+  SvgGenImage get manageAnyWhere =>
+      const SvgGenImage('assets/svg/bitcoin/manageAnyWhere.svg');
+}
+
+class $AssetsSvgFoodDeliveryGen {
+  const $AssetsSvgFoodDeliveryGen();
+
+  /// File path: assets/svg/food_delivery/lunch_time.svg
+  SvgGenImage get lunchTime =>
+      const SvgGenImage('assets/svg/food_delivery/lunch_time.svg');
+
+  /// File path: assets/svg/food_delivery/order_food.svg
+  SvgGenImage get orderFood =>
+      const SvgGenImage('assets/svg/food_delivery/order_food.svg');
+
+  /// File path: assets/svg/food_delivery/take_away.svg
+  SvgGenImage get takeAway =>
+      const SvgGenImage('assets/svg/food_delivery/take_away.svg');
 }
 
 class $AssetsSvgIconsGen {
   const $AssetsSvgIconsGen();
+
+  /// File path: assets/svg/icons/code.svg
+  SvgGenImage get code => const SvgGenImage('assets/svg/icons/code.svg');
+
+  /// File path: assets/svg/icons/login.svg
+  SvgGenImage get login => const SvgGenImage('assets/svg/icons/login.svg');
 
   /// File path: assets/svg/icons/trippleArrow.svg
   SvgGenImage get trippleArrow =>
@@ -44,6 +101,22 @@ class $AssetsSvgOnlineShoppingGen {
       const SvgGenImage('assets/svg/online_shopping/safePayment.svg');
 }
 
+class $AssetsSvgTaskManagementGen {
+  const $AssetsSvgTaskManagementGen();
+
+  /// File path: assets/svg/task_management/createSchedule.svg
+  SvgGenImage get createSchedule =>
+      const SvgGenImage('assets/svg/task_management/createSchedule.svg');
+
+  /// File path: assets/svg/task_management/manageTask.svg
+  SvgGenImage get manageTask =>
+      const SvgGenImage('assets/svg/task_management/manageTask.svg');
+
+  /// File path: assets/svg/task_management/startDay.svg
+  SvgGenImage get startDay =>
+      const SvgGenImage('assets/svg/task_management/startDay.svg');
+}
+
 class $AssetsSvgTravelGen {
   const $AssetsSvgTravelGen();
 
@@ -62,6 +135,7 @@ class $AssetsSvgTravelGen {
 class Assets {
   Assets._();
 
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 

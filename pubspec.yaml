@@ -40,6 +40,9 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   google_fonts: ^3.0.1
   slidable_button: ^2.0.0+1
+  square_percent_indicater: ^0.1.0
+  carousel_slider: ^4.1.1
+  url_launcher: ^6.1.5
   
 
 dev_dependencies:
@@ -64,7 +67,12 @@ flutter:
   assets: 
     - assets/svg/travel/
     - assets/svg/online_shopping/
+    - assets/svg/task_management/
+    - assets/svg/bitcoin/
+    - assets/svg/food_delivery/
     - assets/svg/icons/
+    - assets/images/icons/
+
   uses-material-design: true
 
 flutter_gen: 
